@@ -2,15 +2,38 @@ import React, {Component, useState} from "react";
 import '../styles/App.css';
 
 class App extends Component {
-    render() {
+    constructor(props) {
+    super(props);
+    this.state = {date: new Date()};
+  }
 
-        return(
-            <>
-               
-            </>
-        )
-    }
+  componentDidMount() {
+    this.timerID = setInterval(
+      () => this.tick(),
+      1000
+    );
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.timerID);
+  }
+
+  tick() {
+    this.setState({
+      date: new Date()
+    });
+  }
+
+  render() {
+    return (
+      <div className="Clock>
+       <h3 className="time>
+  {(this.state.date.getHours()>10)?
+   (this.state.date.getHours()%12)+":"+(this.state.date.toLocaleTimeString().split(':').splice(1).join(':')):
+  this.state.date.toLocaleTimeString()} {(this.state.date.getHours()>10)>12?"PM":"AM" }    
+        </h3>
+      </div>
+    );
+  }
 }
-
-
 export default App;
