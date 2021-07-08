@@ -4,15 +4,10 @@ import '../styles/App.css';
 class App extends Component {
     constructor(props) {
     super(props);
-    //this.state = {date: new Date()};
+    this.state = {date: new Date()};
   }
 
-  componentWillMount(){
-    this.state ={date: new Date()};
-  }
-
-  componentDidMount() {
-   
+  componentDidMount() { 
     this.timerID = setInterval(
       () => this.tick(),
       1000
