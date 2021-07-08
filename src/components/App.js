@@ -7,7 +7,7 @@ class App extends Component {
     this.state = {date: new Date()};
   }
 
-  componentDidMount() {
+  componentWillMount() {
     this.timerID = setInterval(
       () => this.tick(),
       1000
