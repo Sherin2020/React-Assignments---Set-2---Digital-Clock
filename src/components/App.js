@@ -32,7 +32,6 @@ class App extends Component {
    (((this.state.date.getHours()<10)&&(this.state.date.toLocaleTimeString().split('').splice(1).join('')))||((this.state.date.getHours()>=10) && (this.state.date.toLocaleTimeString())))} {(this.state.date.getHours()>=12)?"PM":"AM"}
    </h3>
       </div>
-      </div>
     );
   }
 }
